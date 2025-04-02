@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package calculator;
+option go_package = "github.com/rishavkumar7/go-grpc/calculator/calculatorpb";
+
+message CalculatorRequest {
+    int32 first_number = 1;
+    int32 second_number = 2;
+}
+
+message CalculatorResponse {
+    int32 sum_result = 1;
+}
+
+service CalculatorService {
+    rpc Calculate(CalculatorRequest) returns (CalculatorResponse) {}
+}
